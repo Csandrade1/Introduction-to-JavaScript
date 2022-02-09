@@ -35,8 +35,9 @@ Do the following:
 let user = "csandrade";
 let password = "itsasecret";
 if (password === "itsasecret") {
-  console.log("csandrade1");
+  user = "csandrade1";
 }
+console.log(user);
 
 /*
 Task 1c - Convert Strings to Numbers
@@ -107,9 +108,22 @@ NOTE: If done correctly, a weight of 15 lbs and age of 1 year would return 0.449
 */
 
 function hungryDog(weight, age) {
-  if (age >= 1 && weight <= 5) {
+  if (age >= 1) {
+    if (weight <= 5) {
+      return weight * 0.05;
+    } else if (weight >= 6 && weight <= 10) {
+      return weight * 0.04;
+    } else if (weight >= 11 && weight <= 15) {
+      return weight * 0.03;
+    } else {
+      return weight * 0.02;
+    }
+  } else if (age >= 0.16 && age <= 0.33) {
+    return weight * 0.1;
+  } else if (age >= 0.33 && age <= 0.58) {
     return weight * 0.05;
-    console.log(hungryDog(4, 1));
+  } else if (age >= 0.58 && age <= 1) {
+    return weight * 0.04;
   }
 }
 
@@ -137,7 +151,21 @@ HINT: Remember that the order in which we pass in our arguments matters when it 
 */
 
 function game(user, computer) {
-  /*add your code here*/
+  if (user === "scissors" && computer === "paper") {
+    return "you win!";
+  } else if (user === "paper" && computer === "rock") {
+    return "you win!";
+  } else if (user === "rock" && computer === "scissors") {
+    return "you win!";
+  } else if (user === "paper" && computer === "scissors") {
+    return "you lose!";
+  } else if (user === "rock" && computer === "paper") {
+    return "you lose!";
+  } else if (user === "scissors" && computer === "rock") {
+    return "you lose!";
+  } else {
+    return "it's a tie";
+  }
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -151,8 +179,8 @@ Using the miles function below do the following:
 3. Return the number of miles
 */
 
-function miles(/*add your code here*/) {
-  /*add your code here*/
+function miles(kilometers) {
+  return kilometers * 0.621371;
 }
 
 //Task 5b - Feet to CM
@@ -163,8 +191,8 @@ Using the feet function below do the following:
 3. Return number of feet
 */
 
-function feet(/*add your code here*/) {
-  /*add your code here*/
+function feet(cm) {
+  return cm / 30.48;
 }
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -200,18 +228,18 @@ Using the grade function below do the following:
 */
 
 function grade(score) {
-  if (90 >= score <= 100) {
+  if (90 <= score && score <= 100) {
     return "you got an A";
-  } else if (80 >= score <= 89) {
+  } else if (80 <= score && score <= 89) {
     return "you got a B";
-  } else if (70 >= score <= 79) {
+  } else if (70 <= score && score <= 79) {
     return "you got a C";
-  } else if (60 >= score <= 69) {
+  } else if (60 <= score && score <= 69) {
     return "you got a D";
   } else {
     return "you got an F";
   }
-  console.log(grade(75));
+  console.log(grade());
 }
 
 /*💪💪💪💪💪💪💪💪💪💪 Stretch 💪💪💪💪💪💪💪💪💪💪*/
